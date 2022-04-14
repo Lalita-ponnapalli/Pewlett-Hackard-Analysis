@@ -20,7 +20,7 @@ first_name,
 last_name,
 title
 INTO Unique_Titles
-FROM Retirement_titles
+FROM Retirement_titles																																							
 WHERE to_date ='9999-01-01'
 oRDER BY emp_no, to_date DESC;
 
@@ -47,7 +47,15 @@ WHERE d.to_date ='9999-01-01' AND e.birth_date between '1965-01-01' and '1965-12
 order by emp_no
 select*from mentorship_eligibilty
 
-
+-- New query to get more details
+--Total count of employees
+select count(emp_no)
+from mentorship_eligibilty
+---Total count of employees divided by their title
+select count(title),title
+from mentorship_eligibilty
+group by title
+order by count desc
 
 
 
